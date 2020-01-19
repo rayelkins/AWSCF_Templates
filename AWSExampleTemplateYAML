@@ -1,7 +1,6 @@
 AWSTemplateFormatVersion: 2010-09-09
 Description: >-
-  Cloudformation template with 1 instance that adds an arecord to
-  linuxacademylabs.com
+  Put whatever you want here.
 Mappings:
   SubnetConfig:
     VPC:
