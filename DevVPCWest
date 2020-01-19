@@ -1,0 +1,638 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Resources": {
+    "": {
+      "Type": "AWS::RDS::DBSecurityGroup",
+      "Properties": {
+        "GroupDescription": "default"
+      }
+    },
+    "acl49": {
+      "Type": "AWS::EC2::NetworkAclEntry",
+      "Properties": {
+        "CidrBlock": "0.0.0.0/0",
+        "Egress": "true",
+        "Protocol": "6",
+        "RuleAction": "allow",
+        "RuleNumber": "100",
+        "PortRange": {
+          "From": "80",
+          "To": "80"
+        },
+        "NetworkAclId": {
+          "Ref": null
+        }
+      }
+    },
+    "acl50": {
+      "Type": "AWS::EC2::NetworkAclEntry",
+      "Properties": {
+        "CidrBlock": "0.0.0.0/0",
+        "Egress": "true",
+        "Protocol": "6",
+        "RuleAction": "allow",
+        "RuleNumber": "110",
+        "PortRange": {
+          "From": "443",
+          "To": "443"
+        },
+        "NetworkAclId": {
+          "Ref": null
+        }
+      }
+    },
+    "acl51": {
+      "Type": "AWS::EC2::NetworkAclEntry",
+      "Properties": {
+        "CidrBlock": "10.0.1.0/24",
+        "Egress": "true",
+        "Protocol": "6",
+        "RuleAction": "allow",
+        "RuleNumber": "115",
+        "PortRange": {
+          "From": "1024",
+          "To": "65535"
+        },
+        "NetworkAclId": {
+          "Ref": null
+        }
+      }
+    },
+    "acl52": {
+      "Type": "AWS::EC2::NetworkAclEntry",
+      "Properties": {
+        "CidrBlock": "10.0.3.0/24",
+        "Egress": "true",
+        "Protocol": "6",
+        "RuleAction": "allow",
+        "RuleNumber": "120",
+        "PortRange": {
+          "From": "1024",
+          "To": "65535"
+        },
+        "NetworkAclId": {
+          "Ref": null
+        }
+      }
+    },
+    "acl53": {
+      "Type": "AWS::EC2::NetworkAclEntry",
+      "Properties": {
+        "CidrBlock": "10.0.5.0/24",
+        "Egress": "true",
+        "Protocol": "6",
+        "RuleAction": "allow",
+        "RuleNumber": "125",
+        "PortRange": {
+          "From": "1024",
+          "To": "65535"
+        },
+        "NetworkAclId": {
+          "Ref": null
+        }
+      }
+    },
+    "acl54": {
+      "Type": "AWS::EC2::NetworkAclEntry",
+      "Properties": {
+        "CidrBlock": "10.0.7.0/24",
+        "Egress": "true",
+        "Protocol": "6",
+        "RuleAction": "allow",
+        "RuleNumber": "130",
+        "PortRange": {
+          "From": "1024",
+          "To": "65535"
+        },
+        "NetworkAclId": {
+          "Ref": null
+        }
+      }
+    },
+    "acl55": {
+      "Type": "AWS::EC2::NetworkAclEntry",
+      "Properties": {
+        "CidrBlock": "10.0.1.0/24",
+        "Protocol": "6",
+        "RuleAction": "allow",
+        "RuleNumber": "100",
+        "PortRange": {
+          "From": "22",
+          "To": "22"
+        },
+        "NetworkAclId": {
+          "Ref": null
+        }
+      }
+    },
+    "acl56": {
+      "Type": "AWS::EC2::NetworkAclEntry",
+      "Properties": {
+        "CidrBlock": "10.0.3.0/24",
+        "Protocol": "6",
+        "RuleAction": "allow",
+        "RuleNumber": "105",
+        "PortRange": {
+          "From": "22",
+          "To": "22"
+        },
+        "NetworkAclId": {
+          "Ref": null
+        }
+      }
+    },
+    "acl57": {
+      "Type": "AWS::EC2::NetworkAclEntry",
+      "Properties": {
+        "CidrBlock": "10.0.5.0/24",
+        "Protocol": "6",
+        "RuleAction": "allow",
+        "RuleNumber": "110",
+        "PortRange": {
+          "From": "22",
+          "To": "22"
+        },
+        "NetworkAclId": {
+          "Ref": null
+        }
+      }
+    },
+    "acl58": {
+      "Type": "AWS::EC2::NetworkAclEntry",
+      "Properties": {
+        "CidrBlock": "10.0.7.0/24",
+        "Protocol": "6",
+        "RuleAction": "allow",
+        "RuleNumber": "115",
+        "PortRange": {
+          "From": "22",
+          "To": "22"
+        },
+        "NetworkAclId": {
+          "Ref": null
+        }
+      }
+    },
+    "acl59": {
+      "Type": "AWS::EC2::NetworkAclEntry",
+      "Properties": {
+        "CidrBlock": "0.0.0.0/0",
+        "Protocol": "6",
+        "RuleAction": "allow",
+        "RuleNumber": "120",
+        "PortRange": {
+          "From": "1024",
+          "To": "65535"
+        },
+        "NetworkAclId": {
+          "Ref": null
+        }
+      }
+    },
+    "acl60": {
+      "Type": "AWS::EC2::NetworkAclEntry",
+      "Properties": {
+        "CidrBlock": "0.0.0.0/0",
+        "Egress": "true",
+        "Protocol": "-1",
+        "RuleAction": "allow",
+        "RuleNumber": "100",
+        "NetworkAclId": {
+          "Ref": null
+        }
+      }
+    },
+    "acl61": {
+      "Type": "AWS::EC2::NetworkAclEntry",
+      "Properties": {
+        "CidrBlock": "0.0.0.0/0",
+        "Protocol": "-1",
+        "RuleAction": "allow",
+        "RuleNumber": "100",
+        "NetworkAclId": {
+          "Ref": null
+        }
+      }
+    },
+    "acl62": {
+      "Type": "AWS::EC2::NetworkAclEntry",
+      "Properties": {
+        "CidrBlock": "0.0.0.0/0",
+        "Egress": "true",
+        "Protocol": "6",
+        "RuleAction": "allow",
+        "RuleNumber": "100",
+        "PortRange": {
+          "From": "80",
+          "To": "80"
+        },
+        "NetworkAclId": {
+          "Ref": null
+        }
+      }
+    },
+    "acl63": {
+      "Type": "AWS::EC2::NetworkAclEntry",
+      "Properties": {
+        "CidrBlock": "0.0.0.0/0",
+        "Egress": "true",
+        "Protocol": "6",
+        "RuleAction": "allow",
+        "RuleNumber": "110",
+        "PortRange": {
+          "From": "443",
+          "To": "443"
+        },
+        "NetworkAclId": {
+          "Ref": null
+        }
+      }
+    },
+    "acl64": {
+      "Type": "AWS::EC2::NetworkAclEntry",
+      "Properties": {
+        "CidrBlock": "0.0.0.0/0",
+        "Egress": "true",
+        "Protocol": "6",
+        "RuleAction": "allow",
+        "RuleNumber": "120",
+        "PortRange": {
+          "From": "1024",
+          "To": "65535"
+        },
+        "NetworkAclId": {
+          "Ref": null
+        }
+      }
+    },
+    "acl65": {
+      "Type": "AWS::EC2::NetworkAclEntry",
+      "Properties": {
+        "CidrBlock": "10.0.2.0/24",
+        "Egress": "true",
+        "Protocol": "6",
+        "RuleAction": "allow",
+        "RuleNumber": "130",
+        "PortRange": {
+          "From": "1024",
+          "To": "65535"
+        },
+        "NetworkAclId": {
+          "Ref": null
+        }
+      }
+    },
+    "acl66": {
+      "Type": "AWS::EC2::NetworkAclEntry",
+      "Properties": {
+        "CidrBlock": "10.0.4.0/24",
+        "Egress": "true",
+        "Protocol": "6",
+        "RuleAction": "allow",
+        "RuleNumber": "135",
+        "PortRange": {
+          "From": "1024",
+          "To": "65535"
+        },
+        "NetworkAclId": {
+          "Ref": null
+        }
+      }
+    },
+    "acl67": {
+      "Type": "AWS::EC2::NetworkAclEntry",
+      "Properties": {
+        "CidrBlock": "10.0.6.0/24",
+        "Egress": "true",
+        "Protocol": "6",
+        "RuleAction": "allow",
+        "RuleNumber": "140",
+        "PortRange": {
+          "From": "1024",
+          "To": "65535"
+        },
+        "NetworkAclId": {
+          "Ref": null
+        }
+      }
+    },
+    "acl68": {
+      "Type": "AWS::EC2::NetworkAclEntry",
+      "Properties": {
+        "CidrBlock": "10.0.8.0/24",
+        "Egress": "true",
+        "Protocol": "6",
+        "RuleAction": "allow",
+        "RuleNumber": "145",
+        "PortRange": {
+          "From": "1024",
+          "To": "65535"
+        },
+        "NetworkAclId": {
+          "Ref": null
+        }
+      }
+    },
+    "acl69": {
+      "Type": "AWS::EC2::NetworkAclEntry",
+      "Properties": {
+        "CidrBlock": "0.0.0.0/0",
+        "Protocol": "6",
+        "RuleAction": "allow",
+        "RuleNumber": "100",
+        "PortRange": {
+          "From": "80",
+          "To": "80"
+        },
+        "NetworkAclId": {
+          "Ref": null
+        }
+      }
+    },
+    "acl70": {
+      "Type": "AWS::EC2::NetworkAclEntry",
+      "Properties": {
+        "CidrBlock": "0.0.0.0/0",
+        "Protocol": "6",
+        "RuleAction": "allow",
+        "RuleNumber": "110",
+        "PortRange": {
+          "From": "443",
+          "To": "443"
+        },
+        "NetworkAclId": {
+          "Ref": null
+        }
+      }
+    },
+    "acl71": {
+      "Type": "AWS::EC2::NetworkAclEntry",
+      "Properties": {
+        "CidrBlock": "72.197.22.47/32",
+        "Protocol": "6",
+        "RuleAction": "allow",
+        "RuleNumber": "120",
+        "PortRange": {
+          "From": "22",
+          "To": "22"
+        },
+        "NetworkAclId": {
+          "Ref": null
+        }
+      }
+    },
+    "acl72": {
+      "Type": "AWS::EC2::NetworkAclEntry",
+      "Properties": {
+        "CidrBlock": "0.0.0.0/0",
+        "Protocol": "6",
+        "RuleAction": "allow",
+        "RuleNumber": "130",
+        "PortRange": {
+          "From": "1024",
+          "To": "65535"
+        },
+        "NetworkAclId": {
+          "Ref": null
+        }
+      }
+    },
+    "subnetacl17": {
+      "Type": "AWS::EC2::SubnetNetworkAclAssociation",
+      "Properties": {
+        "NetworkAclId": {
+          "Ref": null
+        },
+        "SubnetId": {
+          "Ref": null
+        }
+      }
+    },
+    "subnetacl18": {
+      "Type": "AWS::EC2::SubnetNetworkAclAssociation",
+      "Properties": {
+        "NetworkAclId": {
+          "Ref": null
+        },
+        "SubnetId": {
+          "Ref": null
+        }
+      }
+    },
+    "subnetacl19": {
+      "Type": "AWS::EC2::SubnetNetworkAclAssociation",
+      "Properties": {
+        "NetworkAclId": {
+          "Ref": null
+        },
+        "SubnetId": {
+          "Ref": null
+        }
+      }
+    },
+    "subnetacl20": {
+      "Type": "AWS::EC2::SubnetNetworkAclAssociation",
+      "Properties": {
+        "NetworkAclId": {
+          "Ref": null
+        },
+        "SubnetId": {
+          "Ref": null
+        }
+      }
+    },
+    "subnetacl21": {
+      "Type": "AWS::EC2::SubnetNetworkAclAssociation",
+      "Properties": {
+        "NetworkAclId": {
+          "Ref": null
+        },
+        "SubnetId": {
+          "Ref": null
+        }
+      }
+    },
+    "subnetacl22": {
+      "Type": "AWS::EC2::SubnetNetworkAclAssociation",
+      "Properties": {
+        "NetworkAclId": {
+          "Ref": null
+        },
+        "SubnetId": {
+          "Ref": null
+        }
+      }
+    },
+    "subnetacl23": {
+      "Type": "AWS::EC2::SubnetNetworkAclAssociation",
+      "Properties": {
+        "NetworkAclId": {
+          "Ref": null
+        },
+        "SubnetId": {
+          "Ref": null
+        }
+      }
+    },
+    "subnetacl24": {
+      "Type": "AWS::EC2::SubnetNetworkAclAssociation",
+      "Properties": {
+        "NetworkAclId": {
+          "Ref": null
+        },
+        "SubnetId": {
+          "Ref": null
+        }
+      }
+    },
+    "gw4": {
+      "Type": "AWS::EC2::VPCGatewayAttachment",
+      "Properties": {
+        "VpcId": {
+          "Ref": null
+        },
+        "InternetGatewayId": {
+          "Ref": null
+        }
+      }
+    },
+    "subnetroute11": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": null
+        },
+        "SubnetId": {
+          "Ref": null
+        }
+      }
+    },
+    "subnetroute12": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": null
+        },
+        "SubnetId": {
+          "Ref": null
+        }
+      }
+    },
+    "subnetroute14": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": null
+        },
+        "SubnetId": {
+          "Ref": null
+        }
+      }
+    },
+    "subnetroute15": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": {
+          "Ref": null
+        },
+        "SubnetId": {
+          "Ref": null
+        }
+      }
+    },
+    "route3": {
+      "Type": "AWS::EC2::Route",
+      "Properties": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "RouteTableId": {
+          "Ref": null
+        },
+        "GatewayId": {
+          "Ref": null
+        }
+      },
+      "DependsOn": "gw4"
+    },
+    "dchpassoc3": {
+      "Type": "AWS::EC2::VPCDHCPOptionsAssociation",
+      "Properties": {
+        "VpcId": {
+          "Ref": null
+        },
+        "DhcpOptionsId": {
+          "Ref": null
+        }
+      }
+    },
+    "ingress10": {
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+        "GroupId": {
+          "Ref": null
+        },
+        "IpProtocol": "tcp",
+        "FromPort": "80",
+        "ToPort": "80",
+        "CidrIp": "0.0.0.0/0"
+      }
+    },
+    "ingress11": {
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+        "GroupId": {
+          "Ref": null
+        },
+        "IpProtocol": "tcp",
+        "FromPort": "22",
+        "ToPort": "22",
+        "CidrIp": "0.0.0.0/0"
+      }
+    },
+    "ingress12": {
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+        "GroupId": {
+          "Ref": null
+        },
+        "IpProtocol": "tcp",
+        "FromPort": "443",
+        "ToPort": "443",
+        "CidrIp": "0.0.0.0/0"
+      }
+    },
+    "ingress13": {
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+        "GroupId": {
+          "Ref": null
+        },
+        "IpProtocol": "-1",
+        "SourceSecurityGroupId": {
+          "Ref": null
+        },
+        "SourceSecurityGroupOwnerId": "613710503633"
+      }
+    },
+    "egress6": {
+      "Type": "AWS::EC2::SecurityGroupEgress",
+      "Properties": {
+        "GroupId": {
+          "Ref": null
+        },
+        "IpProtocol": "-1",
+        "CidrIp": "0.0.0.0/0"
+      }
+    },
+    "egress7": {
+      "Type": "AWS::EC2::SecurityGroupEgress",
+      "Properties": {
+        "GroupId": {
+          "Ref": null
+        },
+        "IpProtocol": "-1",
+        "CidrIp": "0.0.0.0/0"
+      }
+    }
+  },
+  "Description": "Dev stack us-west-1"
+}
