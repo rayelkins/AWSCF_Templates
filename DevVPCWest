@@ -27,7 +27,6 @@ Resources:
     Type: 'AWS::EC2::Subnet'
     Properties:
       VpcId: !Ref VPCWest
-      AssignIpv6AddressOnCreation: 'false'
       AvailabilityZone: us-west-2a
       CidrBlock: 10.0.2.0/24
       MapPublicIpOnLaunch: 'false'
@@ -35,7 +34,6 @@ Resources:
     Type: 'AWS::EC2::Subnet'
     Properties:
       VpcId: !Ref VPCWest
-      AssignIpv6AddressOnCreation: 'false'
       AvailabilityZone: us-west-2b
       CidrBlock: 10.0.3.0/24
       MapPublicIpOnLaunch: 'true'
@@ -43,7 +41,6 @@ Resources:
     Type: 'AWS::EC2::Subnet'
     Properties:
       VpcId: !Ref VPCWest
-      AssignIpv6AddressOnCreation: 'false'
       AvailabilityZone: us-west-2b
       CidrBlock: 10.0.4.0/24
       MapPublicIpOnLaunch: 'false'
@@ -51,7 +48,6 @@ Resources:
     Type: 'AWS::EC2::Subnet'
     Properties:
       VpcId: !Ref VPCWest
-      AssignIpv6AddressOnCreation: 'false'
       AvailabilityZone: us-west-2c
       CidrBlock: 10.0.5.0/24
       MapPublicIpOnLaunch: 'true'
@@ -59,7 +55,6 @@ Resources:
     Type: 'AWS::EC2::Subnet'
     Properties:
       VpcId: !Ref VPCWest
-      AssignIpv6AddressOnCreation: 'false'
       AvailabilityZone: us-west-2b
       CidrBlock: 10.0.6.0/24
       MapPublicIpOnLaunch: 'false'
