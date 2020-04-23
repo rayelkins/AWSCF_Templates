@@ -19,7 +19,6 @@ Resources:
     Type: 'AWS::EC2::Subnet'
     Properties:
       VpcId: !Ref VPCWest
-      AssignIpv6AddressOnCreation: 'false'
       AvailabilityZone: us-west-2a
       CidrBlock: 10.0.1.0/24
       MapPublicIpOnLaunch: 'true'
