@@ -35,7 +35,7 @@ Resources:
     Type: 'AWS::EC2::Subnet'
     Properties:
       VpcId: !Ref VPCWest
-      AssignIpv6AddressOnCreation: 'true'
+      AssignIpv6AddressOnCreation: 'false'
       AvailabilityZone: us-west-2b
       CidrBlock: 10.0.3.0/24
       MapPublicIpOnLaunch: 'true'
@@ -51,7 +51,7 @@ Resources:
     Type: 'AWS::EC2::Subnet'
     Properties:
       VpcId: !Ref VPCWest
-      AssignIpv6AddressOnCreation: 'true'
+      AssignIpv6AddressOnCreation: 'false'
       AvailabilityZone: us-west-2c
       CidrBlock: 10.0.5.0/24
       MapPublicIpOnLaunch: 'true'
