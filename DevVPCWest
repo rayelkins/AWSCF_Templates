@@ -99,6 +99,7 @@ Resources:
     Properties:
       DestinationCidrBlock: 0.0.0.0/0
       GatewayId: !Ref WestIGW
+      RouteTableId: !Ref RouteTable
   PublicNACL:    
     Type: 'AWS::EC2::NetworkAcl'
     Properties: 
