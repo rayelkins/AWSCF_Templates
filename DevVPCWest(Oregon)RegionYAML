@@ -6,7 +6,7 @@ Description: >-
 Parameters:
   BucketName:
     Type: String
-    Description: The name of the S3 Bucket to create  
+    Description: The globally unique name of the S3 Bucket to create  
 Resources:
   VPCWest:
     Type: 'AWS::EC2::VPC'
