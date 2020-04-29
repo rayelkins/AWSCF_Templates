@@ -88,9 +88,6 @@ Resources:
     Properties:
       VpcId: !Ref VPCWest
       InternetGatewayId: !Ref WestIGW
-      Tags:
-        - Key: Name
-          Value: WestIGW
   RouteTable:
     Type: 'AWS::EC2::RouteTable'
     Properties:
