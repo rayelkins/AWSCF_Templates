@@ -97,25 +97,16 @@ Resources:
     Properties:
       SubnetId: !Ref dot1Public
       RouteTableId: !Ref RouteTable
-      Tags:
-        - Key: Name
-          Value: RTASSOC1Public
   RTASSOC3Public:
     Type: 'AWS::EC2::SubnetRouteTableAssociation'
     Properties:
       RouteTableId: !Ref RouteTable
       SubnetId: !Ref dot3Public
-      Tags:
-        - Key: Name
-          Value: RTASSOC3Public
   RTASSOC5Public:
     Type: 'AWS::EC2::SubnetRouteTableAssociation'
     Properties:
       RouteTableId: !Ref RouteTable
       SubnetId: !Ref dot5Public
-      Tags:
-        - Key: Name
-          Value: RTASSOC5Public
   defaultRoute:
     Type: 'AWS::EC2::Route'
     DependsOn:
