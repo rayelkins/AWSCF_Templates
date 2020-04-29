@@ -15,6 +15,9 @@ Resources:
       EnableDnsHostnames: 'true'
       EnableDnsSupport: 'true'
       InstanceTenancy: default
+      Tags:
+        - Key: Name
+          Value: VPCWest
   dot1Public:
     Type: 'AWS::EC2::Subnet'
     Properties:
@@ -22,6 +25,9 @@ Resources:
       AvailabilityZone: us-west-2a
       CidrBlock: 10.0.1.0/24
       MapPublicIpOnLaunch: 'true'
+      Tags:
+        - Key: Name
+          Value: dot1Public
   dot2Private:
     Type: 'AWS::EC2::Subnet'
     Properties:
@@ -29,6 +35,9 @@ Resources:
       AvailabilityZone: us-west-2a
       CidrBlock: 10.0.2.0/24
       MapPublicIpOnLaunch: 'false'
+      Tags:
+        - Key: Name
+          Value: dot2Private
   dot3Public:
     Type: 'AWS::EC2::Subnet'
     Properties:
@@ -36,6 +45,9 @@ Resources:
       AvailabilityZone: us-west-2b
       CidrBlock: 10.0.3.0/24
       MapPublicIpOnLaunch: 'true'
+      Tags:
+        - Key: Name
+          Value: dot3Public
   dot4Private:
     Type: 'AWS::EC2::Subnet'
     Properties:
@@ -43,6 +55,9 @@ Resources:
       AvailabilityZone: us-west-2b
       CidrBlock: 10.0.4.0/24
       MapPublicIpOnLaunch: 'false'
+      Tags:
+        - Key: Name
+          Value: dot4Private
   dot5Public:
     Type: 'AWS::EC2::Subnet'
     Properties:
@@ -50,6 +65,9 @@ Resources:
       AvailabilityZone: us-west-2c
       CidrBlock: 10.0.5.0/24
       MapPublicIpOnLaunch: 'true'
+      Tags:
+        - Key: Name
+          Value: dot5Public
   dot6Private:
     Type: 'AWS::EC2::Subnet'
     Properties:
@@ -57,6 +75,9 @@ Resources:
       AvailabilityZone: us-west-2b
       CidrBlock: 10.0.6.0/24
       MapPublicIpOnLaunch: 'false'
+      Tags:
+        - Key: Name
+          Value: dot6Private
   WestIGW:
     Type: 'AWS::EC2::InternetGateway'
     Metadata:
@@ -67,6 +88,9 @@ Resources:
     Properties:
       VpcId: !Ref VPCWest
       InternetGatewayId: !Ref WestIGW
+      Tags:
+        - Key: Name
+          Value: WestIGW
   RouteTable:
     Type: 'AWS::EC2::RouteTable'
     Properties:
@@ -76,16 +100,25 @@ Resources:
     Properties:
       SubnetId: !Ref dot1Public
       RouteTableId: !Ref RouteTable
+      Tags:
+        - Key: Name
+          Value: RTASSOC1Public
   RTASSOC3Public:
     Type: 'AWS::EC2::SubnetRouteTableAssociation'
     Properties:
       RouteTableId: !Ref RouteTable
       SubnetId: !Ref dot3Public
+      Tags:
+        - Key: Name
+          Value: RTASSOC3Public
   RTASSOC5Public:
     Type: 'AWS::EC2::SubnetRouteTableAssociation'
     Properties:
       RouteTableId: !Ref RouteTable
       SubnetId: !Ref dot5Public
+      Tags:
+        - Key: Name
+          Value: RTASSOC5Public
   defaultRoute:
     Type: 'AWS::EC2::Route'
     DependsOn:
